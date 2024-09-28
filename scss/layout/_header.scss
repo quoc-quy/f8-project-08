@@ -1,0 +1,130 @@
+@use '../abstracts';
+
+%flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    background: var(--header-bg);
+}
+
+.header-inner {
+    @extend %flexCenter;
+    padding: 30px 0;
+    @include abstracts.breakpoint (lg) {
+        padding: 20px 0;
+        justify-content: space-between;
+    }
+
+    @include abstracts.breakpoint (sm) {
+        padding: 16px 0;
+    }
+}
+
+.header__more {
+    display: none;
+
+    @include abstracts.breakpoint (lg) {
+        display: block;
+    }
+}
+
+.navbar {
+    margin-left: 144px;
+
+    @include abstracts.breakpoint (xl) {
+        margin-left: 50px;
+    }
+
+    @include abstracts.breakpoint (lg) {
+        display: none;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__link {
+        @extend %flexCenter;
+        column-gap: 6px;
+        padding: 10px 15px;
+        color: inherit;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+.header-act {
+    @extend %flexCenter;
+    column-gap: 30px;
+    margin-left: auto;
+
+    @include abstracts.breakpoint (lg) {
+        margin-left: 0;
+    };
+
+    &__group {
+        @extend %flexCenter;
+
+        min-width: 50px;
+        height: 50px;
+        background: var(--header-act-group-bg);
+        border-radius: 8px;
+        box-shadow: 0px 20px 60px 10px var(--header-act-group-shadow);
+
+        @include abstracts.breakpoint (md) {
+            display: none;
+        };
+    }
+
+    &__group-single {
+        @include abstracts.breakpoint (lg) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+    }
+
+    &__group:first-child &__btn {
+        @extend %flexCenter;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__group:nth-child(2) &__btn {
+        @extend %flexCenter;
+        column-gap: 10px;
+        padding: 0 20px;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    &__separate {
+        width: 1px;
+        height: 30px;
+        background: var(--header-act-separate);
+    }
+}
+
+.header-act__user {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.header-act__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+// =======================    57.10 9:37  =========================
