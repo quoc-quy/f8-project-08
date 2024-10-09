@@ -1211,6 +1211,7 @@ html.dark {
 
 .dropdown {
   --dropdown-padding: 30px;
+  --max-heigh-main: calc(min(582px, 100vh - 158px) - var(--dropdown-padding) * 2 );
   position: absolute;
   left: 0;
   width: min(1240px, 100%);
@@ -1235,7 +1236,7 @@ html.dark {
   display: flex;
   column-gap: 14px;
   width: 292px;
-  max-height: calc(min(582px, 100vh - 158px) - var(--dropdown-padding) * 2);
+  max-height: var(--max-heigh-main);
   border-right: 1px solid var(--dropdown-main-border);
   overflow-y: auto;
 }
@@ -1264,7 +1265,7 @@ html.dark {
   bottom: 0;
   width: 24px;
   height: 24px;
-  object-fit: cover;
+  object-fit: contain;
   filter: var(--dropdown-color-icon);
 }
 .dropdown-heading {
@@ -1305,8 +1306,6 @@ html.dark {
   display: none;
   grid-template-columns: repeat(3, 1fr);
   overflow-y: auto;
-}
-.sub-menu__column {
   padding-left: var(--dropdown-padding);
 }
 .sub-menu__row {
@@ -1316,6 +1315,14 @@ html.dark {
 }
 .sub-menu__row + .sub-menu__row {
   margin-top: 20px;
+}
+.sub-menu--not-main {
+  position: initial;
+  inset: initial;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
+  height: var(--max-heigh-main);
 }
 
 /*# sourceMappingURL=main.css.map */

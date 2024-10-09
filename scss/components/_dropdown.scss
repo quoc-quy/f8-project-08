@@ -2,6 +2,7 @@
 
 .dropdown {
     --dropdown-padding: 30px;
+    --max-heigh-main: calc(min(582px, 100vh - 158px) - var(--dropdown-padding) * 2 );
 
     position: absolute;
     left: 0;
@@ -30,7 +31,7 @@
         display: flex;
         column-gap: 14px;
         width: 292px;
-        max-height: calc(min(582px, 100vh - 158px) - var(--dropdown-padding) * 2 );
+        max-height: var(--max-heigh-main);
         border-right: 1px solid var(--dropdown-main-border);
         overflow-y: auto;
 
@@ -63,7 +64,7 @@
 
             width: 24px;
             height: 24px;
-            object-fit: cover;
+            object-fit: contain;
             filter: var(--dropdown-color-icon);
         }
     }
@@ -111,10 +112,7 @@
     display: none;
     grid-template-columns: repeat(3, 1fr);
     overflow-y: auto;
-
-    &__column {
-        padding-left: var(--dropdown-padding);
-    }
+    padding-left: var(--dropdown-padding);
 
     &__row {
         border-right: none;
@@ -124,5 +122,14 @@
 
     &__row + .sub-menu__row {
         margin-top: 20px;
+    }
+
+    &--not-main {
+        position: initial;
+        inset: initial;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-left: 0;
+        height: var(--max-heigh-main);
     }
 }
