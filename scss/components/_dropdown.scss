@@ -42,13 +42,13 @@
         &__icon {
             position: relative;
 
-            @include abstracts.breakpoint(xl) {
-                display: none;
-            }
-
             flex-shrink: 0;
             width: 36px;
             height: 36px;
+
+            @include abstracts.breakpoint(xl) {
+                display: none;
+            }
         }
 
         &__cate-1 {

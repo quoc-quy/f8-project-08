@@ -1023,7 +1023,7 @@ a, button, input, textarea, select {
   --header-act-group-shadow: rgba(237, 237, 246, 0.20);
   --header-act-separate: #ededf6;
   --dropdown-bg: #fff;
-  --dropdown-shadow: rgba(200, 200, 200, 0.40);
+  --dropdown-shadow: rgba(200, 200, 200, 0.4);
   --dropdown-main-border: #D2D1D6;
 }
 @media (max-width: 991.98px) {
@@ -1042,7 +1042,7 @@ html.dark {
   --header-act-group-shadow: rgba(0, 0, 0, 0.20);
   --header-act-separate: #EDEDF6;
   --dropdown-bg: #2d3340;
-  --dropdown-shadow: rgba(23, 28, 40, 0.40);
+  --dropdown-shadow: rgba(23, 28, 40, 0.4);
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(33%) saturate(379%) hue-rotate(183deg) brightness(95%) contrast(92%);
   --dropdown-main-border: #171C28;
   --dropdown-color-content: #B9BABE;
@@ -1090,27 +1090,69 @@ html.dark {
 @media (max-width: 991.98px) {
   .header__more {
     display: block;
+    cursor: pointer;
   }
 }
 
 .navbar {
   margin-left: 129px;
 }
+.navbar__close-btn {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 991.98px) {
+  .navbar__close-btn {
+    display: block;
+    padding: 10px 40px;
+  }
+}
+.navbar__overplay {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility, opacity;
+  transition-duration: 0.5s;
+}
+@media (max-width: 991.98px) {
+  .navbar__overplay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 8;
+  }
+}
+.show ~ .navbar__overplay {
+  visibility: visible;
+  opacity: 1;
+}
+.navbar.show {
+  transform: translateX(0);
+  transition: 0.5s;
+}
 @media (max-width: 1199.98px) {
   .navbar {
     margin-left: 28px;
+    padding: 20px 0;
   }
 }
 @media (max-width: 991.98px) {
   .navbar {
-    display: none;
+    display: block;
+    position: fixed;
+    inset: 0 50% 0 0;
+    margin-left: 0;
+    background: #fff;
+    z-index: 9;
+    transform: translate(-100%);
   }
 }
 .navbar__list {
   display: flex;
 }
-.navbar__item:hover .dropdown {
-  display: block;
+@media (max-width: 991.98px) {
+  .navbar__list {
+    flex-direction: column;
+  }
 }
 .navbar__link {
   column-gap: 6px;
@@ -1119,6 +1161,12 @@ html.dark {
   color: inherit;
   font-size: 1.5rem;
   font-weight: 500;
+}
+@media (max-width: 991.98px) {
+  .navbar__link {
+    justify-content: space-between;
+    padding: 10px 40px;
+  }
 }
 
 .header-act {

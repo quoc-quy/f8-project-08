@@ -8,16 +8,16 @@ html.dark {
     --header-act-group-bg: #292E39;
     --header-act-group-shadow: rgba(0, 0, 0, 0.20);
     --header-act-separate: #EDEDF6;
-    
-    @include abstracts.breakpoint(lg) {
-        --header-shadow-md: rgba(0, 0, 0, 0.20);
-    }
 
     // Dropdown
     --dropdown-bg: #2d3340;
-    --dropdown-shadow: rgba(23, 28, 40, 0.40);
+    --dropdown-shadow: rgba(23, 28, 40, 0.4);
     --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(33%) saturate(379%) hue-rotate(183deg) brightness(95%) contrast(92%);
     --dropdown-main-border: #171C28;
     --dropdown-color-content: #B9BABE;
     --dropdown-color-icon: brightness(0) saturate(100%) invert(95%) sepia(1%) saturate(378%) hue-rotate(192deg) brightness(95%) contrast(114%);
+    
+    @include abstracts.breakpoint(lg) {
+        --header-shadow-md: rgba(0, 0, 0, 0.20);
+    }
 }
