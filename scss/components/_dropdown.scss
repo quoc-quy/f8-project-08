@@ -12,7 +12,8 @@
 
     @include abstracts.breakpoint (lg) {
         position: initial;
-
+        display: none !important;
+        --max-heigh-main: auto;
         padding: 0;
     }
 
@@ -32,12 +33,20 @@
             border-radius: 0;
             box-shadow: none;
         }
+
+        @include abstracts.breakpoint (sm) {
+            padding: 0 20px;
+        }
+
         &::before {
             content: url(../icons/dropdown-arrow.svg);
             position: absolute;
             top: -10px;
             left: var(--arrow-left-pos);
             filter: var(--dropdown-arrow-color);
+            @include abstracts.breakpoint (lg) {
+                content: none;
+            }
         }
     }
 
@@ -51,6 +60,7 @@
 
         @include abstracts.breakpoint(lg) {
             border-right: none;
+            overflow-y: initial;
         }
 
         &__content {
@@ -130,6 +140,10 @@
 
 .top-menu {
     position: relative;
+
+    @include abstracts.breakpoint (lg) {
+        // height: auto;
+     }
 }
 
 .sub-menu {
@@ -169,6 +183,17 @@
         grid-template-columns: repeat(4, 1fr);
         padding-left: 0;
         height: var(--max-heigh-main);
+
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
+            // height: auto;
+        }
+
+        & .dropdown-main__icon {
+            @include abstracts.breakpoint(lg) {
+                display: block;
+            }
+        }
     }
 
     &__list {
