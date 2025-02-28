@@ -9,6 +9,7 @@ html.dark {
     --header-act-group-shadow: rgba(0, 0, 0, 0.20);
     --header-act-separate: #EDEDF6;
 
+
     // Dropdown
     --dropdown-bg: #2d3340;
     --dropdown-shadow: rgba(23, 28, 40, 0.4);
@@ -45,4 +46,5 @@ html.dark {
     --filter-drop-shadow: rgba(0, 0, 0, 0.40);
     --filter-tag-bg: #171C28;
     --form-placeholder-color: #9E9DA8;
+    --filter-form-arrow: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(1192%) hue-rotate(183deg) brightness(93%) contrast(96%)
 }

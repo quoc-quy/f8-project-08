@@ -1172,6 +1172,7 @@ html.dark {
   --filter-drop-shadow: rgba(0, 0, 0, 0.40);
   --filter-tag-bg: #171C28;
   --form-placeholder-color: #9E9DA8;
+  --filter-form-arrow: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(1192%) hue-rotate(183deg) brightness(93%) contrast(96%) ;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1889,6 +1890,7 @@ html.dark {
   top: -16px;
   right: 20px;
   height: 19.75px;
+  filter: var(--filter-form-arrow);
 }
 .filter__heading {
   font-size: 2.2rem;
@@ -2070,6 +2072,7 @@ html.dark {
 }
 .filter__submit {
   font-size: 1.4rem;
+  color: #1A162E;
 }
 
 .home__container {

@@ -30,6 +30,7 @@
         top: -16px;
         right: 20px;
         height: 19.75px;
+        filter: var(--filter-form-arrow);
     }
     
     &__heading {
@@ -244,6 +245,7 @@
     }
     
     &__submit {
-        font-size: 1.4rem
+        font-size: 1.4rem;
+        color: #1A162E;
     }
 }
